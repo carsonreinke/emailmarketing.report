@@ -1,4 +1,4 @@
-class Email < Application
+class Email < ApplicationRecord
   attr_accessor :site_id, :message
 
   belongs_to :site

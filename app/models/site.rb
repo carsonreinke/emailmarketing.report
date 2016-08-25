@@ -1,4 +1,4 @@
-class Site < Application
+class Site < ApplicationRecord
   attr_accessor :name, :url
 
   has_many :emails
