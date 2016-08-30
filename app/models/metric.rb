@@ -1,5 +1,5 @@
-class Metric < ActiveRecord::Base
-  self.abstract_class = true
-
-  has_one :report, :as => :metric
+module Metric
+  def self.table_name_prefix
+    'metric_'
+  end
 end
