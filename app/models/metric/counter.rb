@@ -1,2 +1,2 @@
-class Metric::Counter < ApplicationRecord
+class Metric::Counter < Metric::Base
 end

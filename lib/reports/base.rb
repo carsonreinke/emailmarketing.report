@@ -1,4 +1,4 @@
-module Stats
+module Reports
   class Base
     attr_reader :site
 
@@ -6,7 +6,7 @@ module Stats
       @site = site
     end
 
-    def report(email) #Report
+    def create(email) #Metric::Base[]
       raise ArgumentError.new('Must be implemented')
     end
   end
