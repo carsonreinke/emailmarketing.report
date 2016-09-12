@@ -6,7 +6,7 @@ module Reports
       @site = site
     end
 
-    def create(email) #Metric::Base[]
+    def create(email) #Report[]
       raise ArgumentError.new('Must be implemented')
     end
   end

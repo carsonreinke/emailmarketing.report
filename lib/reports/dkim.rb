@@ -4,9 +4,10 @@ module Reports
   class Dkim < Base
     def create(email)
       headers = email.mail_message().headers['Dkim']
-      #TODO
-      #TODO Multiple
-      Metric::Counter.new({:site => self.site, :key => headers.empty?() ? 'stats.dkim.signed' : 'stats.dkim.unsigned'})
+      
+      report = email.reports.build({:key => 'dkim'})
+      report.metric = Metric::Counter.new({:value => headers.size()})
+      report
     end
   end
 end
