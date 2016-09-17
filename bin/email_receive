@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+#
+#Keep this light and do not load Rails environment!
+#
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+gem 'sysvmq'
+require 'email/receive'
+
+Email::Receive.new($stdin.read())
