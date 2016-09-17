@@ -4,6 +4,15 @@ class Email < ApplicationRecord
   belongs_to :site
   has_many :reports
 
+  validates :site, {:presence => true}
+  validate do #TODO Better validation
+    begin
+      Mail::Message.new(self.message)
+    rescue
+      errors.add(:message, :format)
+    end
+  end
+
   def mail_message()
     @mail_message ||= Mail::Message.new(self.message)
   end
