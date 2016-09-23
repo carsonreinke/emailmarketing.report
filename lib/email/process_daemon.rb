@@ -8,7 +8,7 @@ module Email
       def run()
         while true
           begin
-            Email::Process.new()
+            Email::Report.new(Email::Process.new().create())
           rescue
             $stderr.puts($!.message)
             $stderr.puts($!.backtrace.join("\n"))

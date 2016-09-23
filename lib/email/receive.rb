@@ -6,7 +6,11 @@ module Email
   #
   class Receive < Base
     def initialize(message)
-      self.class.message_queue.send(message)
+      @message = message
+    end
+
+    def create()
+      self.class.message_queue.send(@message)
     end
   end
 end

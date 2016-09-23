@@ -7,6 +7,7 @@ module Reports
       
       report = email.reports.build({:key => 'dkim'})
       report.metric = Metric::Counter.new({:value => headers.size()})
+      report.save!()
       report
     end
   end

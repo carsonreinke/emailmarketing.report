@@ -1,5 +1,13 @@
+require 'reports'
+
 module Reports
   class Base
+    CLASSES = []
+
+    def self.inherited(klass)
+      CLASSES << klass
+    end
+    
     attr_reader :site
 
     def initialize(site)

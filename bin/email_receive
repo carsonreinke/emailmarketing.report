@@ -9,4 +9,4 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 gem 'sysvmq'
 require 'email/receive'
 
-Email::Receive.new($stdin.read())
+Email::Receive.new($stdin.read()).create()

@@ -6,6 +6,9 @@ module Email
   #
   class Process < Base
     def initialize()
+    end
+
+    def create()
       message = self.class.message_queue.receive()
       mail_message = Mail::Message.new(message)
 
