@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require Chart.js/Chart.js
+//= require Chart.js/dist/Chart.min.js
