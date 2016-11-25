@@ -6,4 +6,9 @@ namespace :email do
       Email::ProcessDaemon.run()
     end
   end
+  
+  task :receive => :environment do
+    require 'email/receive'
+    Email::Receive.new($stdin.read()).create()
+  end
 end

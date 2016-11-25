@@ -8,7 +8,7 @@ class Report < ApplicationRecord
   validates :metric, {:presence => true}
 
   def content(options = {})
-    options = options.merge({:metric => self.metric.value})
+    options = options.merge({:scope => :reports, :metric => self.metric.value})
     I18n.translate(self.key, options)
   end
 end

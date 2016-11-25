@@ -1,0 +1,3 @@
+development: &redis "localhost:6379"
+test: *redis
+production: *redis

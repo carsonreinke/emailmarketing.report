@@ -6,7 +6,7 @@
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-gem 'sysvmq'
+gem 'redis'
 require 'email/receive'
 
 Email::Receive.new($stdin.read()).create()

@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'mail'
-gem 'sysvmq'
+gem 'redis'
 gem 'resque'
 
 group :development, :test do
