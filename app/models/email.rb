@@ -7,7 +7,7 @@ class Email < ApplicationRecord
   validates :site, {:presence => true}
   validate do #TODO Better validation
     begin
-      Mail::Message.new(self.message)
+      self.mail_message()
     rescue
       errors.add(:message, :format)
     end

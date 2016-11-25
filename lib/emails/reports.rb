@@ -1,11 +1,12 @@
+require 'emails/base'
 require 'reports/all'
 
-module Email
-  class Reports
+module Emails
+  class Reports < Base
     def initialize(email)
       @email = email
     end
-    
+
     def create()
       return unless @email.site.verified
 

@@ -6,7 +6,10 @@
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-gem 'redis'
-require 'email/receive'
+gem 'resque'
+require 'resque'
+require 'yaml'
+require File.join(File.dirname(__FILE__), '..', 'config', 'initializers', 'resque')
+require 'emails/receive'
 
-Email::Receive.new($stdin.read()).create()
+Emails::Receive.new($stdin.read()).create()

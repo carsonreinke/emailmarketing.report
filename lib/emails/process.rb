@@ -1,16 +1,16 @@
-require 'email/base'
+require 'emails/base'
 
-module Email
+module Emails
   #
   #
   #
   class Process < Base
-    def initialize()
+    def initialize(message)
+      @message = message
     end
 
     def create()
-      message = self.class.message_queue.receive()
-      mail_message = Mail::Message.new(message)
+      mail_message = Mail::Message.new(@message)
 
       site = Site.find_by!({:email_address => mail_message.to})
       site.emails.create!({:message => message})

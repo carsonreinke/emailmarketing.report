@@ -1,8 +1,9 @@
-require 'email/base'
+require 'emails/base'
+require 'emails/process_job'
 
-module Email
+module Emails
   #
-  #
+  # 
   #
   class Receive < Base
     def initialize(message)
@@ -10,7 +11,7 @@ module Email
     end
 
     def create()
-      self.class.message_queue.send(@message)
+      Resque.enqueue(Emails::ProcessJob, @message)
     end
   end
 end
