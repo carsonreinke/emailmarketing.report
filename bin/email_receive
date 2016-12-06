@@ -9,7 +9,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 gem 'resque'
 require 'resque'
 require 'yaml'
-require File.join('..', 'config', 'initializers', 'resque')
+require File.realpath(File.join(File.dirname(__FILE__), '..', 'config', 'initializers', 'resque.rb'))
 require 'emails/receive'
 
 Emails::Receive.new($stdin.read()).create()
