@@ -45,3 +45,9 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
+#See https://github.com/puma/puma/blob/master/tools/jungle/init.d/README.md
+pidfile File.realpath(File.join(File.dirname(__FILE__), '..', 'tmp', 'puma', 'pid'))
+state_path File.realpath(File.join(File.dirname(__FILE__), '..', 'tmp', 'puma', 'state'))
+
+activate_control_app
