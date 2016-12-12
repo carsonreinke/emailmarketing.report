@@ -1,7 +1,6 @@
 {
   "name": "dsl-generated-dependencies",
   "dependencies": {
-    "jquery": "latest",
     "bootstrap": "latest",
     "Chart.js": "latest"
   }
