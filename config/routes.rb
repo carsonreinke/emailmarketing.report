@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/admin' => redirect('/auth/google_oauth2')
-  constraint(AdminConstraint) do
+  constraints(AdminConstraint) do
     mount RailsAdmin::Engine => '/admin/rails', as: 'rails_admin'
     mount Resque::Server.new, :at => '/admin/resque'
   end
