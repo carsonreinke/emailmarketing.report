@@ -2,7 +2,7 @@
 require 'securerandom'
 
 class Site < ApplicationRecord
-  EMAIL_ADDRESS_DOMAIN = 'emailmarketingreport.reinke.co'
+  EMAIL_ADDRESS_DOMAIN = 'emailmarketing.report'
   EMAIL_ADDRESS_REGEXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze()
 
   attr_accessor :name, :url, :email_address, :verified
@@ -23,7 +23,8 @@ class Site < ApplicationRecord
   validate do #TODO Better validation
     self.email_address.to_s() =~ EMAIL_ADDRESS_REGEXP
   end
-  validates :verified, {:inclusion => [true, false]}
+  #TODO Does not seem to work
+  #validates :verified, {:inclusion => [true, false]}
 
   after_initialize do
     self.email_address ||= "#{SecureRandom.hex()}@#{EMAIL_ADDRESS_DOMAIN}"
