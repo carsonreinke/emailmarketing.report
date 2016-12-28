@@ -1,5 +1,5 @@
 class Report < ApplicationRecord
-  attr_accessor :email_id, :metric_id, :metric_type, :key
+  #attr_accessor :email_id, :metric_id, :metric_type, :key
 
   belongs_to :email
   belongs_to :metric, :polymorphic => true
