@@ -1,4 +1,5 @@
 require 'resque/server'
+require 'constraints/admin_constraint'
 
 Rails.application.routes.draw do
   root 'root#index'
