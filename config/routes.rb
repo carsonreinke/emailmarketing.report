@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get '/auth/:provider/callback', :to => 'sessions#create'
     get '/logout', :to => 'sessions#destroy'
     constraints(AdminConstraint) do
-      mount RailsAdmin::Engine => '/rails', :as => :rails
+      mount RailsAdmin::Engine => '/rails'#, :as => :rails
       mount Resque::Server => '/resque'
     end
   end
