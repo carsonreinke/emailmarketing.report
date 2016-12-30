@@ -4,7 +4,7 @@ module Admin
       if self.current_user.nil?()
         redirect_to(admin_login_path())
       else
-        redirect_to(admin_rails_admin_path())
+        redirect_to(rails_admin_path())
       end
     end
 
