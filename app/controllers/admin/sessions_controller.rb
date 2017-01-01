@@ -14,6 +14,8 @@ module Admin
     end
 
     def destroy()
+      self.current_user = nil
+      redirect_to(admin_root_path())
     end
   end
 end
