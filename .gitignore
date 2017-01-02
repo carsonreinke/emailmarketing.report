@@ -22,3 +22,6 @@
 
 # Bower
 vendor/assets/bower_components/
+
+# Redis
+dump.rdb

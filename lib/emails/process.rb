@@ -13,7 +13,7 @@ module Emails
       mail_message = Mail::Message.new(@message)
 
       site = Site.find_by!({:email_address => mail_message.to})
-      site.emails.create!({:message => message})
+      site.emails.create!({:message => @message})
     end
   end
 end
