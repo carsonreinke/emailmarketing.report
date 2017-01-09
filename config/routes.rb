@@ -3,6 +3,7 @@ require 'constraints/admin_constraint'
 
 Rails.application.routes.draw do
   root 'root#index'
+  resources :emails, {:only => :show}
   delete '/logout' => redirect('/admin/logout'), :as => :logout
 
   namespace :admin do

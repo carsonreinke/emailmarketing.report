@@ -1,3 +1,7 @@
 en:
   reports:
     dkim: "DKIM Present"
+  admin:
+    actions:
+      email_show:
+        menu: "Preview"

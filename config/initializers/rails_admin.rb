@@ -1,3 +1,5 @@
+require 'rails_admin/email_show'
+
 RailsAdmin.config do |config|
   config.main_app_name = 'Email Marketing Report'
   config.parent_controller = '::ApplicationController'
@@ -39,6 +41,10 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+    email_show do
+      only ['Email']
+    end
   end
 
   config.navigation_static_links = {
