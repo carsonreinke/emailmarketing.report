@@ -13,7 +13,5 @@ class Email < ApplicationRecord
     end
   end
 
-  def mail_message()
-    @mail_message ||= Mail::Message.new(self.message)
-  end
+  composed_of :mail_message, {:class_name => 'Mail::Message', :mapping => %w(message encoded)}
 end
