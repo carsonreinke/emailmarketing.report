@@ -6,6 +6,9 @@ class EmailsController < ApplicationController
   def show()
     @email = Email.find(params[:id]).mail_message()
 
+    #cid to inline data URLs
+    @email = ActionMailer::InlinePreviewInterceptor.previewing_email(@email)
+
     if params[:part]
       @part_type = Mime::Type.lookup(params[:part])
 
