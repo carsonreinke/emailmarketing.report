@@ -1,9 +1,8 @@
 require 'emails/base'
-require 'emails/process_job'
 
 module Emails
   #
-  # 
+  #
   #
   class Receive < Base
     def initialize(message)
@@ -11,7 +10,8 @@ module Emails
     end
 
     def create()
-      Resque.enqueue(Emails::ProcessJob, @message)
+      #Don't use #perform_later instead use Resque#enqueue so entire Rails environment does not have to be loaded
+      Resque.enqueue(ProcessJob, @message)
     end
   end
 end

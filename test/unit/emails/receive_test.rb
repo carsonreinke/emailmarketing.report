@@ -10,7 +10,7 @@ module Emails
         Mail::Message.new().encoded()
       ).create()
 
-      assert_queued Emails::ProcessJob
+      assert_queued ProcessJob
     end
   end
 end

@@ -12,4 +12,7 @@ require 'yaml'
 require File.realpath(File.join(File.dirname(__FILE__), '..', 'config', 'initializers', 'resque.rb'))
 require 'emails/receive'
 
+#Define class temporarily
+class ProcessJob; @queue = :default; end
+
 Emails::Receive.new($stdin.read()).create()
