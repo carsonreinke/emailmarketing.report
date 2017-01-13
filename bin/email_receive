@@ -10,9 +10,6 @@ gem 'resque'
 require 'resque'
 require 'yaml'
 require File.realpath(File.join(File.dirname(__FILE__), '..', 'config', 'initializers', 'resque.rb'))
-require 'emails/receive'
+require 'emails/receive_job'
 
-#Define class temporarily
-class ProcessJob; @queue = :default; end
-
-Emails::Receive.new($stdin.read()).create()
+Resque.enqueue(Emails::ReceiveJob, $stdin.read())

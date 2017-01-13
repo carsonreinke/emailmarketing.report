@@ -6,11 +6,11 @@ module Emails
     include ActiveJob::TestHelper
 
     test "create" do
-      Emails::Receive.new(
-        Mail::Message.new().encoded()
-      ).create()
-
-      assert_queued ProcessJob
+      assert_enqueued_with({job: ProcessJob}) do
+        Emails::Receive.new(
+          Mail::Message.new().encoded()
+        ).create()
+      end
     end
   end
 end

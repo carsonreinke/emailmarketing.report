@@ -7,12 +7,6 @@ module Reports
     def self.inherited(klass)
       CLASSES << klass
     end
-    
-    attr_reader :site
-
-    def initialize(site)
-      @site = site
-    end
 
     def create(email) #Report[]
       raise ArgumentError.new('Must be implemented')
