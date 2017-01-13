@@ -1,4 +1,5 @@
 require 'resque/server'
+require 'resque-history/server'
 require 'constraints/admin_constraint'
 
 Rails.application.routes.draw do

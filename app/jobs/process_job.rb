@@ -1,8 +1,7 @@
 require 'emails/process'
 
 class ProcessJob < ApplicationJob
-  @queue = :default
-  queue_as @queue
+  queue_as :default
 
   def perform(message)
     @email = Emails::Process.new(message).create()
