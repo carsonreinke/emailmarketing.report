@@ -9,7 +9,7 @@ module Reports
     end
 
     def create(email) #Report[]
-      raise ArgumentError.new('Must be implemented')
+      email.reports.build({:key => self.class.name})
     end
   end
 end

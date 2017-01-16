@@ -3,9 +3,13 @@ require 'reports/base'
 module Reports
   class Dkim < Base
     def create(email)
-      headers = email.mail_message().headers['Dkim'] || []
+      report = super(email)
 
-      report = email.reports.build({:key => 'dkim'})
+      headers = email.mail_message().header['Dkim'] || []
+      unless headers.is_a?(Array)
+        headers = [headers]
+      end
+
       report.metric = Metric::Counter.new({:value => headers.size()})
       report.save!()
       report
