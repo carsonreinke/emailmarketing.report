@@ -18,7 +18,7 @@ module Reports
 
     test "create with dkim" do
       mail_message = @email.mail_message
-      mail_message.header['Dkim'] = 'Test'
+      mail_message.header['DKIM-Signature'] = 'Test'
       @email.save!()
 
       Reports::Dkim.new().create(@email)
