@@ -1,8 +1,8 @@
 class Email < ApplicationRecord
   #attr_accessor :site_id, :message
 
-  belongs_to :site
-  has_many :reports
+  belongs_to :site, :dependent => :destroy
+  has_many :reports, :dependent => :destroy
 
   validates :site, {:presence => true}
   validate do #TODO Better validation

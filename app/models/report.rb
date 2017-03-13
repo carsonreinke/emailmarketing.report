@@ -1,8 +1,8 @@
 class Report < ApplicationRecord
   #attr_accessor :email_id, :metric_id, :metric_type, :key
 
-  belongs_to :email
-  belongs_to :metric, :polymorphic => true
+  belongs_to :email, :dependent => :destroy
+  belongs_to :metric, :polymorphic => true, :dependent => :destroy
 
   validates :email, {:presence => true}
   validates :metric, {:presence => true}

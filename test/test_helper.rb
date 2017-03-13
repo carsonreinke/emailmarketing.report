@@ -1,6 +1,13 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'webmock/minitest'
+
+WebMock.enable!()
+VCR.configure do |config|
+  config.cassette_library_dir = File.join(Rails.root, 'test', 'vcr_cassettes')
+  config.hook_into :webmock
+end
 
 class ActiveSupport::TestCase
   include ResqueUnit::Assertions

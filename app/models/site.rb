@@ -7,7 +7,7 @@ class Site < ApplicationRecord
 
   #attr_accessor :name, :url, :email_address, :verified
 
-  has_many :emails
+  has_many :emails, :dependent => :destroy
   has_many :reports, :through => :emails
 
   validates :name, {:presence => true}

@@ -6,6 +6,7 @@ h1. Reports
 -Gmail stuff
 -Subject line (emojis?)
 -Outlook hacks
--From address
+-From address (address@)
 -Images/files
 -Attachments
+-Common colors
