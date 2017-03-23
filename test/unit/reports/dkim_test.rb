@@ -25,7 +25,7 @@ module Reports
 
       @email.reload()
       report = @email.reports.take!()
-      assert_equal 1, report.metric.value
+      assert_equal 1, report.value
     end
   end
 end

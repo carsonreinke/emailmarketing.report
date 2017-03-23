@@ -1,7 +1,7 @@
 require 'reports/size'
 
 module Reports
-  class HtmlSize < Size
+  class TextSize < Size
     include EmailHelper
 
 

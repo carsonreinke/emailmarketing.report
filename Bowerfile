@@ -3,3 +3,4 @@
 
 asset 'bootstrap'
 asset 'Chart.js'
+asset 'moment'

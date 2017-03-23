@@ -9,4 +9,7 @@ h1. Reports
 -From address (address@)
 -Images/files
 -Attachments
--Common colors
+-Common colors in emails
+-Pre-generate JSON under Model called Chart
+-Move to STI for Reports instead of Metrics
+-Have report at bottom full-width that has volume of emails over time

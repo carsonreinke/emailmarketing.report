@@ -1,4 +1,4 @@
-require 'reports/all'
+require 'reports'
 
 class ReportsJob < ApplicationJob
   queue_as :default

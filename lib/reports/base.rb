@@ -8,8 +8,6 @@ module Reports
       CLASSES << klass
     end
 
-    def create(email) #Report[]
-      email.reports.build({:key => self.class.name})
-    end
+    def create(email); end
   end
 end

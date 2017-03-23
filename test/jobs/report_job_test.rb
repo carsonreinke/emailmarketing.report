@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'reports/all'
+require 'reports'
 
 class ReportJobTest < ActiveJob::TestCase
   def setup()

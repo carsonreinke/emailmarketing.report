@@ -24,7 +24,7 @@ module Reports
       report = @email.reports.take!()
       assert_equal 'Reports::HtmlDownloadedSize', report.key
 
-      assert_equal 28381, report.metric.value
+      assert_equal 28381, report.value
     end
 
     test "missing asset" do
@@ -43,7 +43,7 @@ module Reports
       report = @email.reports.take!()
       assert_equal 'Reports::HtmlDownloadedSize', report.key
 
-      assert_equal 63, report.metric.value
+      assert_equal 63, report.value
     end
 
     test "missing part" do

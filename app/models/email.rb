@@ -3,6 +3,9 @@ class Email < ApplicationRecord
 
   belongs_to :site, :dependent => :destroy
   has_many :reports, :dependent => :destroy
+  has_many :report_decimals, :dependent => :destroy, :class_name => 'ReportDecimal'
+  has_many :report_integers, :dependent => :destroy, :class_name => 'ReportInteger'
+  has_many :report_strings, :dependent => :destroy, :class_name => 'ReportString'
 
   validates :site, {:presence => true}
   validate do #TODO Better validation

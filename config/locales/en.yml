@@ -1,6 +1,11 @@
 en:
-  reports:
-    dkim: "DKIM Present"
+  layouts:
+    application:
+      title: "Email Marketing Report"
+  root:
+    index:
+      header: "Email Marketing Report"
+      lead: ""
   admin:
     actions:
       email_show:

@@ -22,7 +22,7 @@ module Reports
       report = @email.reports.take!()
       assert_equal 'Reports::HtmlSize', report.key
 
-      assert_equal 21, report.metric.value
+      assert_equal 21, report.value
     end
 
     test "missing" do

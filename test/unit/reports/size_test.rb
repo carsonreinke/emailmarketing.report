@@ -15,7 +15,7 @@ module Reports
       report = @email.reports.take!()
       assert_equal 'Reports::Size', report.key
 
-      assert report.metric.value > 0
+      assert report.value > 0
     end
   end
 end

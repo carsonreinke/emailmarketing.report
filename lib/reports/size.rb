@@ -3,12 +3,12 @@ require 'reports/base'
 module Reports
   class Size < Base
     def create(email)
-      report = super(email)
+      report = email.report_integers.build({:key => self.class.name})
 
       _size = size(email.mail_message())
       return if _size.nil?()
 
-      report.metric = Metric::Numeric.new({:value => _size})
+      report.value = _size
       report.save!()
       report
     end
