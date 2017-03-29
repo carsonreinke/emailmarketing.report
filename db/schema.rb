@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906005127) do
+ActiveRecord::Schema.define(version: 20170323142713) do
+
+  create_table "charts", force: :cascade do |t|
+    t.string   "key"
+    t.text     "configuration"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["key"], name: "index_charts_on_key", unique: true
+  end
 
   create_table "emails", force: :cascade do |t|
     t.text     "message"
@@ -20,34 +28,17 @@ ActiveRecord::Schema.define(version: 20160906005127) do
     t.index ["site_id"], name: "index_emails_on_site_id"
   end
 
-  create_table "metric_counters", force: :cascade do |t|
-    t.integer  "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "metric_numerics", force: :cascade do |t|
-    t.decimal  "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "metric_strings", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reports", force: :cascade do |t|
-    t.integer  "email_id",    null: false
-    t.string   "key",         null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "metric_type"
-    t.integer  "metric_id"
+    t.integer  "email_id",   null: false
+    t.string   "key",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "type"
+    t.integer  "integer"
+    t.string   "string"
+    t.decimal  "decimal"
     t.index ["email_id"], name: "index_reports_on_email_id"
     t.index ["key"], name: "index_reports_on_key"
-    t.index ["metric_type", "metric_id"], name: "index_reports_on_metric_type_and_metric_id"
   end
 
   create_table "sites", force: :cascade do |t|

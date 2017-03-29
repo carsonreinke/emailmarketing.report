@@ -1,7 +1,7 @@
 require 'reports/base'
 
 module Reports
-  class Dkim < Base
+  class DkimUsage < Base
     def create(email)
       report = email.report_integers.build({:key => self.class.name})
 

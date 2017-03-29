@@ -2,14 +2,14 @@ require 'test_helper'
 require 'reports/dkim'
 
 module Reports
-  class DkimTest < ActiveSupport::TestCase
+  class DkimUsageTest < ActiveSupport::TestCase
     def setup()
       @site = Site.create!({:name => 'Test', :url => 'http://example.com', :email_address => 'test@example.com', :verified => true})
       @email = @site.emails.create!({:message => Mail::Message.new().encoded()})
     end
 
     test "create" do
-      Reports::Dkim.new().create(@email)
+      Reports::DkimUsage.new().create(@email)
 
       @email.reload()
       report = @email.reports.take!()
@@ -21,7 +21,7 @@ module Reports
       mail_message.header['DKIM-Signature'] = 'Test'
       @email.save!()
 
-      Reports::Dkim.new().create(@email)
+      Reports::DkimUsage.new().create(@email)
 
       @email.reload()
       report = @email.reports.take!()
