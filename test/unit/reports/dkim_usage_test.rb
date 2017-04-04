@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'reports/dkim'
+require 'reports/dkim_usage'
 
 module Reports
   class DkimUsageTest < ActiveSupport::TestCase
@@ -13,7 +13,7 @@ module Reports
 
       @email.reload()
       report = @email.reports.take!()
-      assert_equal 'Reports::Dkim', report.key
+      assert_equal 'Reports::DkimUsage', report.key
     end
 
     test "create with dkim" do

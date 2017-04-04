@@ -3,6 +3,6 @@ module RootHelper
     obj = @charts[key]
     return nil if obj.nil?()
 
-    content_tag(:canvas, nil, {:'data-chart' => obj.configuration.to_json()})
+    content_tag(:canvas, nil, {:'data-chart' => obj.to_json()})
   end
 end

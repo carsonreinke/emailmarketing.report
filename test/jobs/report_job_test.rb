@@ -8,6 +8,6 @@ class ReportJobTest < ActiveJob::TestCase
   end
 
   test "perform" do
-    ReportJob.perform_now(Reports::Dkim.name, @email.id)
+    ReportJob.perform_now(Reports::DkimUsage.name, @email.id)
   end
 end
