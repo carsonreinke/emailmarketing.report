@@ -7,7 +7,7 @@
       <div class="panel panel-default">
         <div class="panel-heading"><%=t('.dkim')%></div>
         <div class="panel-body">
-          <%=pie_chart api_dkim_usage_path(:format => :json)%>
+          <%=chart('Charts::DkimUsage')%>
         </div>
       </div>
     </div>

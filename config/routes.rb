@@ -4,6 +4,12 @@ require 'constraints/admin_constraint'
 
 Rails.application.routes.draw do
   root 'root#index'
+
+  namespace :api, :format => :json do
+    get 'dkim/usage', :to => 'dkim#usage'
+    get 'dkim/usage_overtime', :to => 'dkim#usage_overtime'
+  end
+
   resources :emails, {:only => :show}
   delete '/logout' => redirect('/admin/logout'), :as => :logout
 

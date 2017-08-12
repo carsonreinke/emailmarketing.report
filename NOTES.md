@@ -1,0 +1,3 @@
+- JSON endpoint for each chart data
+- chartkick
+- How to provide labels from JSON endpoint?  Merge hashes?

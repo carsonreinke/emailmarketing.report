@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap.min.js
-//= require moment/min/moment.min.js
-//= require Chart.js/dist/Chart.min.js
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
 //= require_self
