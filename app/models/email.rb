@@ -15,6 +15,11 @@ class Email < ApplicationRecord
       errors.add(:message, :format)
     end
   end
+  validates :sent_at, {:presence => true}
 
   composed_of :mail_message, {:class_name => 'Mail::Message', :mapping => %w(message encoded)}
+
+  before_validation do
+    self.sent_at ||= self.mail_message.date rescue Time.zone.now
+  end
 end

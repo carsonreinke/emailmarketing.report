@@ -6,6 +6,16 @@ en:
     index:
       header: "Email Marketing Report"
       lead: ""
+      reports:
+        dkim:
+          header: "DKIM"
+          usage: "DKIM Usage"
+          usage_overtime: "DKIM Usage Overtime"
+  api:
+    dkim:
+      usage:
+        yes: 'Present'
+        no: 'Not Present'
   admin:
     actions:
       email_show:

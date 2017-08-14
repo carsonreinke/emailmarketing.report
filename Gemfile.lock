@@ -65,6 +65,8 @@ GEM
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    groupdate (3.2.0)
+      activesupport (>= 3)
     haml (4.0.7)
       tilt
     hashdiff (0.3.2)
@@ -241,6 +243,7 @@ DEPENDENCIES
   bower-rails
   byebug
   chartkick
+  groupdate
   httpclient
   jbuilder (~> 2.5)
   jquery-rails

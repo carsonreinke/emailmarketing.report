@@ -6,19 +6,27 @@ module Api
         yes, no = ReportInteger.where(ReportInteger.arel_table[:integer].gt(0)).count(),
         ReportInteger.where(ReportInteger.arel_table[:integer].lt(1)).count()
       end
+      @data = {t('.yes') => yes, t('.no') => no}
       respond_to do |format|
         format.json do
-          render :json => {:yes => yes, :no => no}
+          render :json => @data
         end
       end
     end
 
     def usage_overtime()
-      ReportInteger.
+      @data = ReportInteger.
         includes(:email).
         where(ReportInteger.arel_table['key'].eq('Reports::DkimUsage')).
-        group(Email.arel_table['created_at'])
-      respond_to :json
+        references(:email).
+        group_by_day(:'emails.sent_at').
+        count()
+
+      respond_to do |format|
+        format.json do
+          render :json => @data
+        end
+      end
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323142713) do
+ActiveRecord::Schema.define(version: 20170813192022) do
 
   create_table "charts", force: :cascade do |t|
     t.string   "key"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170323142713) do
     t.integer  "site_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "sent_at",    null: false
     t.index ["site_id"], name: "index_emails_on_site_id"
   end
 
