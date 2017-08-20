@@ -60,6 +60,7 @@ GEM
     execjs (2.7.0)
     faraday (0.10.0)
       multipart-post (>= 1.2, < 3)
+    fastimage (2.1.0)
     ffi (1.9.14)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
@@ -243,6 +244,7 @@ DEPENDENCIES
   bower-rails
   byebug
   chartkick
+  fastimage
   groupdate
   httpclient
   jbuilder (~> 2.5)

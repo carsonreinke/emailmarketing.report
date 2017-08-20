@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   namespace :api, :format => :json do
     get 'dkim/usage', :to => 'dkim#usage'
     get 'dkim/usage_overtime', :to => 'dkim#usage_overtime'
+
+    get 'size/average_sizes', :to => 'size#average_sizes'
   end
 
   resources :emails, {:only => :show}

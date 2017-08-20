@@ -19,7 +19,7 @@ module Reports
         begin
           URI.parse(element['src'])
         rescue
-          Rails.logger.warn($!)
+          Rails.logger.warn($!.inspect())
           nil
         end
       end
@@ -32,7 +32,7 @@ module Reports
             _size += chunk.bytesize()
           end
         rescue
-          Rails.logger.warn($!)
+          Rails.logger.warn($!.inspect())
         end
       end
 

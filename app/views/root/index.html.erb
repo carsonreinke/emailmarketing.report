@@ -9,7 +9,16 @@
         <div class="panel-body">
           <%=pie_chart(api_dkim_usage_path(:format => :json), {:title => t('.reports.dkim.usage')})%>
 
-          <%=line_chart(api_dkim_usage_overtime_path(:format => :json), {:title => t('.reports.dkim.usage_overtime')})%>
+          <%=line_chart(api_dkim_usage_overtime_path(:format => :json), {:title => t('.reports.dkim.usage_overtime'), :ytitle => t('.reports.dkim.usage_overtime_y'), :min => 0, :max => 100})%>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading"><%=t('.reports.size.header')%></div>
+        <div class="panel-body">
+          <%=column_chart(api_size_average_sizes_path(:format => :json), {:title => t('.reports.size.average_sizes'), :ytitle => t('.reports.size.average_sizes_y'), :min => 0})%>
         </div>
       </div>
     </div>

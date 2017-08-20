@@ -13,3 +13,4 @@ h1. Reports
 -Pre-generate JSON under Model called Chart
 -Move to STI for Reports instead of Metrics
 -Have report at bottom full-width that has volume of emails over time
+-Text to image ratio

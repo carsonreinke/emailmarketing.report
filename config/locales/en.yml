@@ -11,11 +11,21 @@ en:
           header: "DKIM"
           usage: "DKIM Usage"
           usage_overtime: "DKIM Usage Overtime"
+          usage_overtime_y: "Percentage"
+        size:
+          average_sizes: "Average Sizes"
+          average_sizes_y: "Bytes"
   api:
     dkim:
       usage:
-        yes: 'Present'
-        no: 'Not Present'
+        "yes": "Present"
+        "no": "Not Present"
+    size:
+      average_sizes:
+        size: "Total Size"
+        html_size: "HTML Size"
+        text_size: "Plain Text Size"
+        html_downloaded_size: "HTML Size (Including External Images)"
   admin:
     actions:
       email_show:

@@ -17,11 +17,22 @@ module Api
     def usage_overtime()
       @data = ReportInteger.
         includes(:email).
-        where(ReportInteger.arel_table['key'].eq('Reports::DkimUsage')).
+        where(:key => 'Reports::DkimUsage').
+        where(ReportInteger.arel_table[:integer].gt(0)).
         references(:email).
         group_by_day(:'emails.sent_at').
         count()
-
+      @data.merge!(
+        ReportInteger.
+          includes(:email).
+          where(:key => 'Reports::DkimUsage').
+          where(ReportInteger.arel_table[:integer].lt(1)).
+          references(:email).
+          group_by_day(:'emails.sent_at').
+          count()
+      ) do |key, oldval, newval|
+        newval > 0 ? (oldval.to_f() / (newval.to_f() + oldval.to_f()) * 100.0) : 0.0
+      end
       respond_to do |format|
         format.json do
           render :json => @data
