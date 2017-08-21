@@ -5,7 +5,7 @@ module Reports
     include EmailHelper
 
     def create(email)
-      report = email.report_decimals.build({:key => self.class.name})
+      report = email.report_decimals.find_or_initialize_by({:key => self.class.name})
 
       #Process inline attachments for reading
       mail_message = ActionMailer::InlinePreviewInterceptor.previewing_email(email.mail_message())
@@ -19,7 +19,9 @@ module Reports
 
       #For the most part copied from SpamAssassin
       #See http://svn.apache.org/viewvc/spamassassin/trunk/lib/Mail/SpamAssassin/Plugin/ImageInfo.pm
-      text_size = (doc.css('body').text || '').size()
+      body = doc.css('body').text || ''
+      body.gsub!(/\s+/, ' ')
+      text_size = body.size()
 
       image_size = 0
       doc.css('img[src]').each do |element|

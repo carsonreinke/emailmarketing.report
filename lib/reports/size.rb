@@ -3,7 +3,7 @@ require 'reports/base'
 module Reports
   class Size < Base
     def create(email)
-      report = email.report_integers.build({:key => self.class.name})
+      report = email.report_integers.find_or_initialize_by({:key => self.class.name})
 
       _size = size(email.mail_message())
       return if _size.nil?()
