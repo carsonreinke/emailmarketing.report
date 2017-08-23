@@ -20,7 +20,7 @@
         <div class="panel-body">
           <%=column_chart(api_size_average_sizes_path(:format => :json), {:title => t('.reports.size.average_sizes'), :ytitle => t('.reports.size.average_sizes_y'), :min => 0})%>
 
-          <%=column_chart(api_size_image_to_text_ranges_path(:format => :json), {:title => t('.reports.size.image_to_text_ranges'), :ytitle => t('.reports.size.image_to_text_ranges_y'), :min => 0})%>
+          <%=column_chart(api_size_image_to_text_ranges_path(:format => :json), {:title => t('.reports.size.image_to_text_ranges'), :xtitle => t('.reports.size.image_to_text_ranges_x'), :ytitle => t('.reports.size.image_to_text_ranges_y'), :min => 0})%>
         </div>
       </div>
     </div>

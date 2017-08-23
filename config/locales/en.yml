@@ -16,6 +16,7 @@ en:
           average_sizes: "Average Sizes"
           average_sizes_y: "Bytes"
           image_to_text_ranges: "Text To Image Ratio"
+          image_to_text_ranges_x: "Percentage"
           image_to_text_ranges_y: "Volume"
   api:
     dkim:
