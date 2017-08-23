@@ -36,7 +36,7 @@ module Reports
 
       #Image to text ratio is actually text over image area
       ratio = text_size.to_f() / image_size.to_f() if image_size > 0
-      ratio = 1.0 if ratio > 1.0
+      ratio = 1.0 if ratio > 1.0 || image_size < 1
 
       report.value = ratio
       report.save!()

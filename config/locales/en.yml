@@ -15,6 +15,8 @@ en:
         size:
           average_sizes: "Average Sizes"
           average_sizes_y: "Bytes"
+          image_to_text_ranges: "Text To Image Ratio"
+          image_to_text_ranges_y: "Volume"
   api:
     dkim:
       usage:
@@ -26,6 +28,8 @@ en:
         html_size: "HTML Size"
         text_size: "Plain Text Size"
         html_downloaded_size: "HTML Size (Including External Images)"
+      image_to_text_ranges:
+        percent: "%{lower}-%{upper}"
   admin:
     actions:
       email_show:
