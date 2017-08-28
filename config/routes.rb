@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     get 'dkim/usage_overtime', :to => 'dkim#usage_overtime'
 
     get 'size/average_sizes', :to => 'size#average_sizes'
-    get 'size/image_to_text_ranges', :to => 'size#image_to_text_ranges'
+
+    get 'image_to_text/ranges', :to => 'image_to_text#ranges'
   end
 
   resources :emails, {:only => :show}

@@ -9,15 +9,21 @@ en:
       reports:
         dkim:
           header: "DKIM"
+          footer: "TODO"
           usage: "DKIM Usage"
           usage_overtime: "DKIM Usage Overtime"
           usage_overtime_y: "Percentage"
         size:
-          average_sizes: "Average Sizes"
+          header: "Sizes"
+          footer: "TODO"
+          average_sizes: "Average Size"
           average_sizes_y: "Bytes"
-          image_to_text_ranges: "Text To Image Ratio"
-          image_to_text_ranges_x: "Percentage"
-          image_to_text_ranges_y: "Volume"
+        image_to_text:
+          header: "Text To Image"
+          footer: "TODO"
+          ranges: "Text To Image Ratio"
+          ranges_x: "Percentage"
+          ranges_y: "Volume"
   api:
     dkim:
       usage:
@@ -29,7 +35,8 @@ en:
         html_size: "HTML Size"
         text_size: "Plain Text Size"
         html_downloaded_size: "HTML Size (Including External Images)"
-      image_to_text_ranges:
+    image_to_text:
+      ranges:
         percent: "%{lower}-%{upper}"
   admin:
     actions:

@@ -1,28 +1,28 @@
 <h1><%=t('.header')%></h1>
 <p class="lead"><%=t('.lead')%></p>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-heading"><%=t('.reports.dkim.header')%></div>
-        <div class="panel-body">
-          <%=pie_chart(api_dkim_usage_path(:format => :json), {:title => t('.reports.dkim.usage')})%>
+<div class="panel panel-default">
+  <div class="panel-heading"><%=t('.reports.dkim.header')%></div>
+  <div class="panel-body">
+    <%=pie_chart(api_dkim_usage_path(:format => :json), {:title => t('.reports.dkim.usage')})%>
 
-          <%=line_chart(api_dkim_usage_overtime_path(:format => :json), {:title => t('.reports.dkim.usage_overtime'), :ytitle => t('.reports.dkim.usage_overtime_y'), :min => 0, :max => 100})%>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-heading"><%=t('.reports.size.header')%></div>
-        <div class="panel-body">
-          <%=column_chart(api_size_average_sizes_path(:format => :json), {:title => t('.reports.size.average_sizes'), :ytitle => t('.reports.size.average_sizes_y'), :min => 0})%>
-
-          <%=column_chart(api_size_image_to_text_ranges_path(:format => :json), {:title => t('.reports.size.image_to_text_ranges'), :xtitle => t('.reports.size.image_to_text_ranges_x'), :ytitle => t('.reports.size.image_to_text_ranges_y'), :min => 0})%>
-        </div>
-      </div>
-    </div>
+    <%=line_chart(api_dkim_usage_overtime_path(:format => :json), {:title => t('.reports.dkim.usage_overtime'), :ytitle => t('.reports.dkim.usage_overtime_y'), :min => 0, :max => 100})%>
   </div>
+  <div class="panel-footer"><%=t('.reports.dkim.footer')%></div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><%=t('.reports.size.header')%></div>
+  <div class="panel-body">
+    <%=column_chart(api_size_average_sizes_path(:format => :json), {:title => t('.reports.size.average_sizes'), :ytitle => t('.reports.size.average_sizes_y'), :min => 0})%>
+  </div>
+  <div class="panel-footer"><%=t('.reports.size.footer')%></div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><%=t('.reports.image_to_text.header')%></div>
+  <div class="panel-body">
+    <%=column_chart(api_image_to_text_ranges_path(:format => :json), {:title => t('.reports.image_to_text.ranges'), :xtitle => t('.reports.image_to_text.ranges_x'), :ytitle => t('.reports.image_to_text.ranges_y'), :min => 0})%>
+  </div>
+  <div class="panel-footer"><%=t('.reports.image_to_text.footer')%></div>
 </div>

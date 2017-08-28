@@ -1,5 +1,5 @@
 module Api
-  class DkimController < ApplicationController
+  class DkimController < BaseController
     def usage()
       yes, no = nil
       ReportInteger.where({:key => 'Reports::DkimUsage'}).scoping do
@@ -31,7 +31,7 @@ module Api
           group_by_day(:'emails.sent_at').
           count()
       ) do |key, oldval, newval|
-        newval > 0 ? (oldval.to_f() / (newval.to_f() + oldval.to_f()) * 100.0) : 0.0
+        newval > 0 ? (oldval.to_f() / (newval.to_f() + oldval.to_f()) * 100.0).floor() : 0.0
       end
       respond_to do |format|
         format.json do
