@@ -5,7 +5,8 @@ en:
   root:
     index:
       header: "Email Marketing Report"
-      lead: ""
+      lead: |
+        Collection of intriguing reports detailing usage of certain standards, features, and hacks of email marketing.
       reports:
         dkim:
           header: "DKIM"
@@ -24,6 +25,10 @@ en:
           ranges: "Text To Image Ratio"
           ranges_x: "Percentage"
           ranges_y: "Volume"
+        address:
+          header: "Address"
+          footer: "TODO"
+          from_local: "Local From Address"
   api:
     dkim:
       usage:

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get 'size/average_sizes', :to => 'size#average_sizes'
 
     get 'image_to_text/ranges', :to => 'image_to_text#ranges'
+
+    get 'address/from_local', :to => 'address#from_local'
   end
 
   resources :emails, {:only => :show}

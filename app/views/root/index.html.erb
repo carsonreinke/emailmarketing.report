@@ -26,3 +26,11 @@
   </div>
   <div class="panel-footer"><%=t('.reports.image_to_text.footer')%></div>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><%=t('.reports.address.header')%></div>
+  <div class="panel-body">
+    <%=pie_chart(api_address_from_local_path(:format => :json), {:title => t('.reports.address.from_local')})%>
+  </div>
+  <div class="panel-footer"><%=t('.reports.address.footer')%></div>
+</div>
