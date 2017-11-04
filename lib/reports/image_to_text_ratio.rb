@@ -2,8 +2,6 @@ require 'reports/base'
 
 module Reports
   class ImageToTextRatio < Base
-    include EmailHelper
-
     def create(email)
       report = email.report_decimals.find_or_initialize_by({:key => self.class.name})
 

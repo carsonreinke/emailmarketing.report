@@ -13,3 +13,4 @@ h1. Reports
 -Email client targeting report
 -Video in email report
 -Interactive email report
+-Animated GIFs

@@ -2,7 +2,6 @@ require 'reports/html_size'
 
 module Reports
   class HtmlDownloadedSize < HtmlSize
-    include EmailHelper
 
 
   protected

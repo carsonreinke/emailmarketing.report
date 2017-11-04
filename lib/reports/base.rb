@@ -2,6 +2,9 @@ require 'reports'
 
 module Reports
   class Base
+    include EmailHelper
+
+
     CLASSES = []
 
     def self.inherited(klass)

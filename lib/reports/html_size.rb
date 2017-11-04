@@ -2,7 +2,6 @@ require 'reports/size'
 
 module Reports
   class HtmlSize < Size
-    include EmailHelper
 
 
   protected
