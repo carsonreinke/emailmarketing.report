@@ -29,6 +29,10 @@ en:
           header: "Address"
           footer: "TODO"
           from_local: "Local From Address"
+        conditional_comments:
+          header: "HTML Conditional Comments"
+          footer: "TODO"
+          feature_version: "Feature Version"
   api:
     dkim:
       usage:

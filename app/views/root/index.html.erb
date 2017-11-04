@@ -34,3 +34,11 @@
   </div>
   <div class="panel-footer"><%=t('.reports.address.footer')%></div>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><%=t('.reports.conditional_comments.header')%></div>
+  <div class="panel-body">
+    <%=pie_chart(api_conditional_comments_feature_version_path(:format => :json), {:title => t('.reports.conditional_comments.feature_version')})%>
+  </div>
+  <div class="panel-footer"><%=t('.reports.conditional_comments.footer')%></div>
+</div>

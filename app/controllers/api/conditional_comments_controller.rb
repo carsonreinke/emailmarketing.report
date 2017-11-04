@@ -1,9 +1,9 @@
 module Api
-  class AddressController < BaseController
-    caches_action :from_local
-    
-    def from_local()
-      @data = ReportString.where({:key => 'Reports::FromLocalAddress'}).
+  class ConditionalCommentsController < BaseController
+    caches_action :feature_version
+
+    def feature_version()
+      @data = ReportString.where({:key => 'Reports::ConditionalComments'}).
         group(:string).
         order(ReportString.arel_table[:string].count.desc).
         limit(5).

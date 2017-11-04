@@ -1,5 +1,7 @@
 module Api
   class DkimController < BaseController
+    caches_action :usage, :usage_overtime
+    
     def usage()
       yes, no = nil
       ReportInteger.where({:key => 'Reports::DkimUsage'}).scoping do

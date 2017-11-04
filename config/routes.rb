@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get 'image_to_text/ranges', :to => 'image_to_text#ranges'
 
     get 'address/from_local', :to => 'address#from_local'
+
+    get 'conditional_comments/feature_version', :to => 'conditional_comments#feature_version'
   end
 
   resources :emails, {:only => :show}
