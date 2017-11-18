@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813192022) do
-
-  create_table "charts", force: :cascade do |t|
-    t.string   "key"
-    t.text     "configuration"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["key"], name: "index_charts_on_key", unique: true
-  end
+ActiveRecord::Schema.define(version: 20171118155657) do
 
   create_table "emails", force: :cascade do |t|
     t.text     "message"
