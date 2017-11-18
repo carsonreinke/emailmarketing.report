@@ -1,44 +1,39 @@
-<h1><%=t('.header')%></h1>
-<p class="lead"><%=t('.lead')%></p>
-
-<div class="panel panel-default">
-  <div class="panel-heading"><%=t('.reports.dkim.header')%></div>
-  <div class="panel-body">
-    <%=pie_chart(api_dkim_usage_path(:format => :json), {:title => t('.reports.dkim.usage')})%>
-
-    <%=line_chart(api_dkim_usage_overtime_path(:format => :json), {:title => t('.reports.dkim.usage_overtime'), :ytitle => t('.reports.dkim.usage_overtime_y'), :min => 0, :max => 100})%>
-  </div>
-  <div class="panel-footer"><%=t('.reports.dkim.footer')%></div>
+<div class="jumbotron">
+  <h1><%=t('.header')%></h1>
+  <p><%=t('.reports.emails.lead')%></p>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-heading"><%=t('.reports.size.header')%></div>
-  <div class="panel-body">
-    <%=column_chart(api_size_average_sizes_path(:format => :json), {:title => t('.reports.size.average_sizes'), :ytitle => t('.reports.size.average_sizes_y'), :min => 0})%>
-  </div>
-  <div class="panel-footer"><%=t('.reports.size.footer')%></div>
+<h4><a id="dkim" href="dkim"><%=t('.reports.dkim.header')%></a></h4>
+<p><%=t('.reports.dkim.intro')%> <a href="<%=t('.reports.dkim.more')%>">More >></a></p>
+<div class="well">
+  <%=pie_chart(api_dkim_usage_path(:format => :json), {:title => t('.reports.dkim.usage')})%>
+  <!--<%=line_chart(api_dkim_usage_overtime_path(:format => :json), {:title => t('.reports.dkim.usage_overtime'), :ytitle => t('.reports.dkim.usage_overtime_y'), :min => 0, :max => 100})%>-->
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-heading"><%=t('.reports.image_to_text.header')%></div>
-  <div class="panel-body">
-    <%=column_chart(api_image_to_text_ranges_path(:format => :json), {:title => t('.reports.image_to_text.ranges'), :xtitle => t('.reports.image_to_text.ranges_x'), :ytitle => t('.reports.image_to_text.ranges_y'), :min => 0})%>
-  </div>
-  <div class="panel-footer"><%=t('.reports.image_to_text.footer')%></div>
+<h4><a id="size" href="#size"><%=t('.reports.size.header')%></a></h4>
+<p><%=t('.reports.size.intro')%> <a href="<%=t('.reports.size.more')%>">More >></a></p>
+<div class="well">
+  <%=column_chart(api_size_average_sizes_path(:format => :json), {:title => t('.reports.size.average_sizes'), :ytitle => t('.reports.size.average_sizes_y'), :min => 0})%>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-heading"><%=t('.reports.address.header')%></div>
-  <div class="panel-body">
+<h4><a id="image_to_text" href="#image_to_text"><%=t('.reports.image_to_text.header')%></a></h4>
+<p><%=t('.reports.image_to_text.intro')%> <a href="<%=t('.reports.image_to_text.more')%>">More >></a></p>
+<div class="well">
+  <%=column_chart(api_image_to_text_ranges_path(:format => :json), {:title => t('.reports.image_to_text.ranges'), :xtitle => t('.reports.image_to_text.ranges_x'), :ytitle => t('.reports.image_to_text.ranges_y'), :min => 0})%>
+</div>
+
+<h4><a id="address" href="#address"><%=t('.reports.address.header')%></a></h4>
+<p><%=t('.reports.address.intro')%> <a href="<%=t('.reports.address.more')%>">More >></a></p>
+<div class="well">
     <%=pie_chart(api_address_from_local_path(:format => :json), {:title => t('.reports.address.from_local')})%>
-  </div>
-  <div class="panel-footer"><%=t('.reports.address.footer')%></div>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-heading"><%=t('.reports.conditional_comments.header')%></div>
-  <div class="panel-body">
-    <%=pie_chart(api_conditional_comments_feature_version_path(:format => :json), {:title => t('.reports.conditional_comments.feature_version')})%>
-  </div>
-  <div class="panel-footer"><%=t('.reports.conditional_comments.footer')%></div>
+<h4><a id="conditional_comments" href="#conditional_comments"><%=t('.reports.conditional_comments.header')%></a></h4>
+<p><%=t('.reports.conditional_comments.intro')%> <a href="<%=t('.reports.conditional_comments.more')%>">More >></a></p>
+<div class="well">
+  <%=pie_chart(api_conditional_comments_feature_version_path(:format => :json), {:title => t('.reports.conditional_comments.feature_version')})%>
 </div>
+
+<h4><a id="volume"><%=t('.reports.emails.volume_overtime')%></a></h4>
+<p><%=t('.reports.emails.intro')%></p>
+<div class="well"><%=line_chart(api_emails_volume_overtime_path(:format => :json), {:title => t('.reports.emails.volume_overtime'), :ytitle => t('.reports.emails.volume_overtime_y'), :min => 0, :height => '150px'})%></div>

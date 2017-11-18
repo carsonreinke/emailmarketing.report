@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'root#index'
 
   namespace :api, :format => :json do
+    get 'emails/volume_overtime', :to => 'emails#volume_overtime'
+
     get 'dkim/usage', :to => 'dkim#usage'
     get 'dkim/usage_overtime', :to => 'dkim#usage_overtime'
 

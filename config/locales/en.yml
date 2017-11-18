@@ -2,36 +2,56 @@ en:
   layouts:
     application:
       title: "Email Marketing Report"
+      header: "Email Marketing Report"
+      navigation:
+        home: "Home"
+        reports: "Reports"
+        contact: "Contact"
+        dkim: "DKIM"
+        sizes: "Sizes"
+        image_to_text: "Text To Image"
+        address: "Address"
   root:
     index:
       header: "Email Marketing Report"
-      lead: |
-        Collection of intriguing reports detailing usage of certain standards, features, and hacks of email marketing.
       reports:
+        emails:
+          lead: |
+            Collection of intriguing reports detailing usage of certain standards, features, and hacks of email marketing.
+            Data is collected automatically by subscribing to various companies email newsletters.
+            These reports can help email marketers see what others are doing.
+          intro: "Number of emails received by this report system."
+          volume_overtime: "Email Volume To emailmarketing.report"
+          volume_overtime_y: "Volume"
         dkim:
           header: "DKIM"
-          footer: "TODO"
+          intro: "DomainKeys Identified Mail is an important mail standard to help validate the sender truly has sent the message.  Not all emails are signed with DKIM."
+          more: "https://litmus.com/blog/tag/dkim"
           usage: "DKIM Usage"
           usage_overtime: "DKIM Usage Overtime"
           usage_overtime_y: "Percentage"
         size:
           header: "Sizes"
-          footer: "TODO"
+          intro: "Email file size is the ultimate length of a particular part of an email.  This is important for SPAM and potentially rendering concerns."
+          more: "https://www.emailonacid.com/blog/article/email-development/how_does_email_file_size_affect_deliverability"
           average_sizes: "Average Size"
           average_sizes_y: "Bytes"
         image_to_text:
           header: "Text To Image"
-          footer: "TODO"
+          intro: "Text to image ratio is the the length of text content compared to the area of the images.  Calculations are based on image to text ratio calculations from SpamAssassin."
+          more: "https://www.emailonacid.com/blog/article/email-development/does_text_to_image_ratio_affect_deliverability"
           ranges: "Text To Image Ratio"
           ranges_x: "Percentage"
           ranges_y: "Volume"
         address:
           header: "Address"
-          footer: "TODO"
+          intro: "The From address portion left of the \"@\".  Different uses may impact user interaction."
+          more: "https://trillioncreative.com/4-reasons-use-info-general-email-address/"
           from_local: "Local From Address"
         conditional_comments:
           header: "HTML Conditional Comments"
-          footer: "TODO"
+          intro: "Conditional comments help emails render properly on a variety of email clients.  The most common concern is Microsoft Outlook."
+          more: "https://templates.mailchimp.com/development/css/outlook-conditional-css/"
           feature_version: "Feature Version"
   api:
     dkim:
