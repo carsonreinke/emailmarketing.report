@@ -1,0 +1,26 @@
+<%= form_for(site, {:html => {}}) do |f| %>
+  <% if site.errors.any? %>
+    <div id="error_explanation" class="form-group">
+      <h2><%= pluralize(site.errors.count, "error") %> prohibited this site from being saved:</h2>
+
+      <ul>
+      <% site.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, {:class => 'form-control', :required => true} %>
+  </div>
+
+  <div class="form-group">
+    <%= recaptcha_tags %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit(t('.submit'), {:class => 'btn btn-default'}) %>
+  </div>
+<% end %>

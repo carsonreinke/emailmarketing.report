@@ -21,8 +21,10 @@ Rails.application.routes.draw do
   end
 
   resources :emails, {:only => :show}
-  delete '/logout' => redirect('/admin/logout'), :as => :logout
+  resources :sites, {:only => [:new, :create]}
+  get 'sites', {:to => redirect({:path => '/sites/new'})}
 
+  delete '/logout' => redirect('/admin/logout'), :as => :logout
   namespace :admin do
     root 'sessions#index'
     get '/login' => redirect('/admin/auth/google_oauth2')

@@ -27,7 +27,7 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li class="active"><a href="<%=root_path()%>"><%=t('.navigation.home')%></a></li>
+            <li class="<%='active' if current_page?(root_path())%>"><a href="<%=root_path()%>"><%=t('.navigation.home')%></a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <%=t('.navigation.reports')%> <span class="caret"></span>
@@ -42,6 +42,11 @@
                 <li><a href="<%=root_path({:anchor => 'volume'})%>"><%=t('.navigation.volume')%></a></li>
               </ul>
             </li>
+
+            <li class="<%='active' if current_page?(new_site_path()) || current_page?(sites_path())%>">
+              <a href="<%=new_site_path()%>" title="<%=t('.navigation.site')%>"><span class="glyphicon glyphicon-plus"></span> <%=t('.navigation.site')%></a>
+            </li>
+
             <li><a href="mailto:carson@reinke.co"><%=t('.navigation.contact')%></a></li>
           </ul>
         </nav>

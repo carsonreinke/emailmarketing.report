@@ -48,6 +48,8 @@ gem 'groupdate'
 gem 'fastimage'
 gem 'actionpack-action_caching'
 gem 'html-conditional-comment'
+gem 'recaptcha', require: 'recaptcha/rails'
+gem 'metainspector'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
