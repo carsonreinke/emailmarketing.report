@@ -3,6 +3,7 @@ en:
     application:
       title: "Email Marketing Report"
       header: "Email Marketing Report"
+      built_by: "Built by Carson Reinke"
       navigation:
         home: "Home"
         reports: "Reports"
