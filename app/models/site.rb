@@ -11,6 +11,12 @@ class Site < ApplicationRecord
   has_many :emails, :dependent => :destroy
   has_many :reports, :through => :emails
 
+  composed_of :address, {
+    :class_name => 'Mail::Address',
+    :mapping => %w(email_address to_s),
+    :allow_nil => false
+  }
+
   validates :name, {:presence => true}
   validates :url, {:presence => true, :uniqueness => true}
   validate do #TODO Better validation

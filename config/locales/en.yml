@@ -63,7 +63,7 @@ en:
       intro: "You can add an additional newletter to our reports which is a big contribution.  Simply provide the URL/Domain to the site and a unique email address will be provided that can be used to sign-up."
     create:
       header: "%{site} has been added, but.."
-      explain: "...in order to start receiving data, please sign-up for the newsletter using the email address <b>%{email_address}</b>."
+      explain: "...in order to start receiving data, please sign-up for the newsletter using the email address <b>%{email_address}</b> (or if you have trouble try using <b>%{local_address}@emr.reinke.co</b>)."
   api:
     dkim:
       usage:

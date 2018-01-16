@@ -22,4 +22,17 @@ class ProcessJobTest < ActiveJob::TestCase
       ProcessJob.perform_now(message.encoded())
     end
   end
+
+  test "perform same local address" do
+    site = Site.create!({:name => 'Test', :url => 'http://example.com', :email_address => 'test@example.com'})
+    message = Mail::Message.new()
+    message.to = 'test@www.example.com'
+
+    assert_enqueued_with({job: ReportsJob}) do
+      ProcessJob.perform_now(message.encoded())
+    end
+
+    site.reload()
+    assert_equal site.emails.count, 1
+  end
 end

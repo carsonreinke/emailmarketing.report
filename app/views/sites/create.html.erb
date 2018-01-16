@@ -1,2 +1,2 @@
 <h3><%=t('.header', {:site => @site.name})%></h3>
-<p><%=raw(t('.explain', {:email_address => @site.email_address}))%></p>
+<p><%=raw(t('.explain', {:email_address => @site.email_address, :local_address => @site.address.local}))%></p>
