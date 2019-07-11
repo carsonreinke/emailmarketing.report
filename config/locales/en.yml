@@ -3,7 +3,7 @@ en:
     application:
       title: "Email Marketing Report"
       header: "Email Marketing Report"
-      built_by_html: "Built by <a href="https://reinke.co/">Carson Reinke</a>"
+      built_by_html: "Built by <a href=\"https://reinke.co/\">Carson Reinke</a>"
       navigation:
         home: "Home"
         reports: "Reports"
