@@ -17,8 +17,8 @@
     <meta name="csrf-param" content="authenticity_token" />
 <meta name="csrf-token" content="IGYymjKU2LESwwdunImt4wctuUGRPC53wSUD63ffBtJ3LvgwN4RnWg//+dLf7zmURrGqLmmA0RoamRXfqwevJw==" />
 
-    <link rel="stylesheet" media="all" href="/emailmarketing.report/assets/application-1c377ed8d3bda9e32406b2ac529612d55b8d1cbe834b36be890686fbf8ad4d9f.css" data-turbolinks-track="reload" />
-    <script src="/emailmarketing.report/assets/application-7a4496e5bcd5a3bf0aece6e040b565a0925bffebcee8b82b08289e899531a530.js" data-turbolinks-track="reload"></script>
+    <link rel="stylesheet" media="all" href="assets/application-1c377ed8d3bda9e32406b2ac529612d55b8d1cbe834b36be890686fbf8ad4d9f.css" data-turbolinks-track="reload" />
+    <script src="assets/application-7a4496e5bcd5a3bf0aece6e040b565a0925bffebcee8b82b08289e899531a530.js" data-turbolinks-track="reload"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,19 +30,19 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="">Home</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 Reports <span class="caret"></span>
               </a>
 
               <ul class="dropdown-menu">
-                <li><a href="/#dkim">DKIM</a></li>
-                <li><a href="/#size"><span class="translation_missing" title="translation missing: en.layouts.application.navigation.size">Size</span></a></li>
-                <li><a href="/#image_to_text">Text To Image</a></li>
-                <li><a href="/#address">Address</a></li>
-                <li><a href="/#conditional_comments"><span class="translation_missing" title="translation missing: en.layouts.application.navigation.conditional_comments">Conditional Comments</span></a></li>
-                <li><a href="/#volume"><span class="translation_missing" title="translation missing: en.layouts.application.navigation.volume">Volume</span></a></li>
+                <li><a href="#dkim">DKIM</a></li>
+                <li><a href="#size"><span class="translation_missing" title="translation missing: en.layouts.application.navigation.size">Size</span></a></li>
+                <li><a href="#image_to_text">Text To Image</a></li>
+                <li><a href="#address">Address</a></li>
+                <li><a href="#conditional_comments"><span class="translation_missing" title="translation missing: en.layouts.application.navigation.conditional_comments">Conditional Comments</span></a></li>
+                <li><a href="#volume"><span class="translation_missing" title="translation missing: en.layouts.application.navigation.volume">Volume</span></a></li>
               </ul>
             </li>
 
@@ -68,11 +68,11 @@ These reports can help email marketers see what others are doing.
 <p>DomainKeys Identified Mail is an important mail standard to help validate the sender truly has sent the message.  Not all emails are signed with DKIM. <a href="https://litmus.com/blog/tag/dkim">More >></a></p>
 <div class="well">
   <div id="chart-1" style="height: 300px; width: 100%; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-  new Chartkick["PieChart"]("chart-1", "/api/dkim/usage.json", {"download":true,"title":"DKIM Usage"});
+  new Chartkick["PieChart"]("chart-1", "api/dkim/usage.json", {"download":true,"title":"DKIM Usage"});
 </script>
 
   <!--<div id="chart-2" style="height: 300px; width: 100%; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-  new Chartkick["LineChart"]("chart-2", "/api/dkim/usage_overtime.json", {"download":true,"title":"DKIM Usage Overtime","ytitle":"Percentage","min":0,"max":100});
+  new Chartkick["LineChart"]("chart-2", "api/dkim/usage_overtime.json", {"download":true,"title":"DKIM Usage Overtime","ytitle":"Percentage","min":0,"max":100});
 </script>
 -->
 </div>
@@ -81,7 +81,7 @@ These reports can help email marketers see what others are doing.
 <p>Email file size is the ultimate length of a particular part of an email.  This is important for SPAM and potentially rendering concerns. <a href="https://www.emailonacid.com/blog/article/email-development/how_does_email_file_size_affect_deliverability">More >></a></p>
 <div class="well">
   <div id="chart-3" style="height: 300px; width: 100%; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-  new Chartkick["ColumnChart"]("chart-3", "/api/size/average_sizes.json", {"download":true,"title":"Average Size","ytitle":"Bytes","min":0});
+  new Chartkick["ColumnChart"]("chart-3", "api/size/average_sizes.json", {"download":true,"title":"Average Size","ytitle":"Bytes","min":0});
 </script>
 
 </div>
@@ -90,7 +90,7 @@ These reports can help email marketers see what others are doing.
 <p>Text to image ratio is the the length of text content compared to the area of the images.  Calculations are based on image to text ratio calculations from SpamAssassin. <a href="https://www.emailonacid.com/blog/article/email-development/does_text_to_image_ratio_affect_deliverability">More >></a></p>
 <div class="well">
   <div id="chart-4" style="height: 300px; width: 100%; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-  new Chartkick["ColumnChart"]("chart-4", "/api/image_to_text/ranges.json", {"download":true,"title":"Text To Image Ratio","xtitle":"Percentage","ytitle":"Volume","min":0});
+  new Chartkick["ColumnChart"]("chart-4", "api/image_to_text/ranges.json", {"download":true,"title":"Text To Image Ratio","xtitle":"Percentage","ytitle":"Volume","min":0});
 </script>
 
 </div>
@@ -99,7 +99,7 @@ These reports can help email marketers see what others are doing.
 <p>The From address portion left of the &quot;@&quot;.  Different uses may impact user interaction. <a href="https://trillioncreative.com/4-reasons-use-info-general-email-address/">More >></a></p>
 <div class="well">
     <div id="chart-5" style="height: 300px; width: 100%; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-  new Chartkick["PieChart"]("chart-5", "/api/address/from_local.json", {"download":true,"title":"Local From Address"});
+  new Chartkick["PieChart"]("chart-5", "api/address/from_local.json", {"download":true,"title":"Local From Address"});
 </script>
 
 </div>
@@ -108,7 +108,7 @@ These reports can help email marketers see what others are doing.
 <p>Conditional comments help emails render properly on a variety of email clients.  The most common concern is Microsoft Outlook. <a href="https://templates.mailchimp.com/development/css/outlook-conditional-css/">More >></a></p>
 <div class="well">
   <div id="chart-6" style="height: 300px; width: 100%; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-  new Chartkick["PieChart"]("chart-6", "/api/conditional_comments/feature_version.json", {"download":true,"title":"Feature Version"});
+  new Chartkick["PieChart"]("chart-6", "api/conditional_comments/feature_version.json", {"download":true,"title":"Feature Version"});
 </script>
 
 </div>
@@ -116,7 +116,7 @@ These reports can help email marketers see what others are doing.
 <h4><a id="volume">Email Volume To emailmarketing.report</a></h4>
 <p>Number of emails received by this report system.</p>
 <div class="well"><div id="chart-7" style="height: 150px; width: 100%; text-align: center; color: #999; line-height: 150px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-  new Chartkick["LineChart"]("chart-7", "/api/emails/volume_overtime.json", {"download":true,"title":"Email Volume To emailmarketing.report","ytitle":"Volume","min":0});
+  new Chartkick["LineChart"]("chart-7", "api/emails/volume_overtime.json", {"download":true,"title":"Email Volume To emailmarketing.report","ytitle":"Volume","min":0});
 </script>
 </div>
 
